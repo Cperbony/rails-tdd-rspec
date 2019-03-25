@@ -1,28 +1,27 @@
-describe 'Matchers de Comparacao' do
-it '#equal - Testa se é o mesmo objeto' do
-	x = "ruby"
-	y = "ruby"
-	expect(x).not_to equal(y)
-	expect(x).to equal(x)
-end
+describe "Matchers de Comparacao" do
+  it ">" do
+    expect(5).to be > 1
+  end
 
-it '#be - Testa se é o mesmo objeto' do
-	x = "ruby"
-	y = "ruby"
-	expect(x).not_to be(y)
-	expect(x).to be(x)
-end
+  it ">=" do
+	expect(5).to be >= 2
+	expect(5).to be >= 5
+  end
 
-it '#eql - Testa o valor/conteúdo' do
-	x = "ruby"
-	y = "ruby"
-	expect(x).to eql(y)
-end
+  it "<" do
+	expect(5).to be < 12
+  end
 
-it '#eq - Testa o valor/conteúdo com eq' do
-	x = "ruby"
-	y = "ruby"
-	expect(x).to eq(y)
-end
+  it "<=" do
+	expect(5).to be <= 12
+  end
+
+  it "be_between inclusive" do
+	expect(5).to be_between(2,7).inclusive
+  end
+
+  it "be_between exclusive" do
+	expect(5).to be_between(2,7).exclusive
+  end
 
 end
